@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NanoMOS Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NanoMOS Explorer</h1>
+        <p>Explore the characteristics of nanoscale transistors!</p>
+
+        <div class="controls">
+            <label for="gate-voltage">Gate Voltage (V):</label>
+            <input type="range" id="gate-voltage" min="0" max="5" step="0.1" value="1">
+            <span id="gate-voltage-value">1</span> V
+
+            <label for="oxide-thickness">Oxide Thickness (nm):</label>
+            <input type="range" id="oxide-thickness" min="1" max="10" step="0.5" value="2">
+            <span id="oxide-thickness-value">2</span> nm
+
+            <label for="channel-length">Channel Length (nm):</label>
+            <input type="range" id="channel-length" min="10" max="100" step="1" value="50">
+            <span id="channel-length-value">50</span> nm
+
+            <label for="mobility">Carrier Mobility (cm²/V·s):</label>
+            <input type="range" id="mobility" min="100" max="1000" step="10" value="500">
+            <span id="mobility-value">500</span> cm²/V·s
+        </div>
+
+        <div id="output">
+            <h2>Simulation Results</h2>
+            <p>I-V Characteristics: <span id="iv-value">0</span> μA</p>
+        </div>
+
+        <button id="download-btn">Download Data as CSV</button>
+
+        <div id="tooltip">Hover over any parameter to learn more.</div>
+
+        <div id="visualization">
+            <h3>3D Visualization of Transistor</h3>
+            <canvas id="3d-canvas"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
